@@ -1,5 +1,5 @@
 // import React from 'react'
-import './Navbar.css'
+import Marquee from './Marquee/Marquee'
 
 const Navbar = () => {
   return (
@@ -10,9 +10,11 @@ const Navbar = () => {
             </span>
             <span className="text-[#b0afaf]">Aryan</span>
         </div>
-        <div className="border border-red-400 flex-grow px-5 text-3xl rounded-2xl">
-            <marquee direction="right" className=''>Announcement</marquee>
+
+        <div className="overflow-hidden border border-red-400 flex-grow px-5 text-3xl rounded-2xl">
+            <Marquee text="Sample Announcement 1" />
         </div>
+        
         <div className="flex flex-col text-right justify-end">
             <div className="text-3xl">08:15 AM </div>
             <div className="text-md text-[#b0afaf]">July 24, Wednesday</div>
