@@ -10,11 +10,12 @@
 
 .pomodoro-container {
   height: 50%;
+  top: 30px;
   margin-top:10px;
-  color: white;
+  /* color: white; */
   position:absolute;
   margin-left:auto;
-  right:2rem;;
+  right:2rem;
   width:20vw;
   font-family: var(--sans);
   font-weight: 600;
@@ -37,7 +38,7 @@
     position: relative;
     width: 310px;
     height: 260px;
-    background-color: #4c6fff;
+    background-color: #ffffff;
     backdrop-filter: blur(3px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     /* border-radius:30px; */
@@ -94,7 +95,7 @@
   .close-btn {
     background: none;
     border: none;
-    color: white;
+    /* color: white; */
     font-size: 12px;
     cursor: pointer;
   }
@@ -127,7 +128,7 @@
     border-radius: 5px;
     border: 1px solid white;
     background-color: transparent;
-    color: white;
+    /* color: white; */
     font-family: var(--sans);
   }
 
@@ -135,10 +136,10 @@
   font-size: 1.2rem;
   width: 220px;
   /* height: 30px; */
-  background-color: #4c6fff;
-  color:#f0f2f6;
+  background-color: #ffffff;
+  /* color:#f0f2f6; */
   backdrop-filter: blur(3px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
   text-align: center;
@@ -155,7 +156,7 @@
     padding:5px;
     width:5rem;
     border-radius:100px;
-    color:#f0f2f6;
+    /* color:#f0f2f6; */
     background-color:transparent;
     
 }
@@ -165,7 +166,7 @@
   padding:5px;
   width:8rem;
   border-radius:100px;
-  color:#f0f2f6;
+  /* color:#f0f2f6; */
   background-color:transparent;
 }
 
