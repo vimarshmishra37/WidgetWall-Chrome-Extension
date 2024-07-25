@@ -40,7 +40,7 @@ const Player = () => {
   };
 
   return (
-    <div className="h-full flex justify-center items-start overflow-auto p-4">
+    // <div className="h-full flex justify-center items-start overflow-auto p-4">
       <div className="w-full max-w-sm">
         <div className="mb-3">
           <iframe
@@ -84,7 +84,7 @@ const Player = () => {
           ))}
         </div>
       </div>
-    </div>
+    // </div>
 
   );
 };
