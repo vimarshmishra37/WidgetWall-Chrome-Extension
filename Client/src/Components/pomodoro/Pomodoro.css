@@ -9,25 +9,16 @@
 } */
 
 .pomodoro-container {
-  height: 50%;
-  top: 30px;
-  margin-top:10px;
-  /* color: white; */
-  position:absolute;
-  margin-left:auto;
-  right:2rem;
-  width:20vw;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 1.1rem;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  width: 100%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .material-symbols-outlined {
@@ -36,7 +27,7 @@
 
 .content {
     position: relative;
-    width: 310px;
+    width: 100%;
     height: 260px;
     background-color: #ffffff;
     backdrop-filter: blur(3px);
@@ -44,9 +35,10 @@
     /* border-radius:30px; */
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
     /* padding: 20px; */
+    overflow-x:hidden;
     text-align: center;
     transition: 0.3s ease-in-out;
-    overflow: hidden;
+    overflow-y:hidden;
   }
   
   #pomo {
@@ -64,7 +56,7 @@
   
   #settings {
     position: absolute;
-    top: 0;
+    top: -13px;
     left: 100%;
     width: 100%;
     /* height: 100%; */
@@ -102,17 +94,17 @@
   
   #settings-btn {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 0.5rem;
+    top: 0.3rem;
     font-size:0.8rem;
     z-index: 10;
   }
   
   #duration-inputs {
     display: flex;
-    margin-top:1rem;
+    margin-top:0.5rem;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
     overflow-y:hidden;
   }
   
@@ -132,20 +124,14 @@
     font-family: var(--sans);
   }
 
-#tab-holder {
-  font-size: 1.2rem;
-  width: 220px;
-  /* height: 30px; */
-  background-color: #ffffff;
-  /* color:#f0f2f6; */
-  backdrop-filter: blur(3px);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  padding: 5px;
-  margin-bottom: 10px;
-}
+  #tab-holder {
+    font-size: 1rem;
+    padding: 5px 15px;
+    background-color: #f0f2f6;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
 #time{
     font-size:3rem;
 }

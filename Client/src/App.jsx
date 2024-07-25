@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 // import { useState } from 'react'
+// import MusicPlayer from './Components/musicPlayer/MusicPlayer';
 import ReactDOM from 'react-dom';
 import React from 'react';
 
@@ -68,14 +69,17 @@ function App() {
           </div>
           {/* <div className='min-w-[32%] h-[80%] rounded-xl border border-purple-600'>p1</div> */}
           <div className='min-w-[32%] h-[80%] rounded-xl flex flex-col gap-5'>
-              <div className='w-full h-1/2 rounded-xl border-2 border-[#5d7dfc] bg-white'>
-                <Pomodoro />
-              </div>
+          <div className='w-full h-1/2 rounded-xl border-2 border-[#5d7dfc] bg-white overflow-hidden'>
+  <Pomodoro />
+</div>
               <div className='w-full h-1/2 rounded-xl bg-[#5d7dfc] pl-5 text-white'>
                   Quote comes here
               </div>
+
           </div>
-          <div className='min-w-[32%] h-[80%] rounded-xl border border-[#5d7dfc] bg-white'>Other Widget</div>
+          <div className='min-w-[32%] h-[80%] rounded-xl border border-[#5d7dfc] bg-white'>Other Widget
+          {/* <MusicPlayer /> */}
+          </div>
         </div>
       </div>
     </div>

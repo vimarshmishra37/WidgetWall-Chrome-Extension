@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Settings, X } from 'lucide-react';
 import './Pomodoro.css';
 
 const Pomodoro = () => {
@@ -64,12 +65,13 @@ const Pomodoro = () => {
   };
 
   return (
-    <div className="pomodoro-container">
-      <div id="tab-holder">
-        <div id="tab">{tab}</div>
-      </div>
+    <div className="pomodoro-container w-full h-full flex flex-col items-center justify-center">
+      
       <div className="content">
         <div id="pomo" className={showSettings ? 'hide' : ''}>
+        <div id="tab-holder">
+        <div id="tab">{tab}</div>
+      </div>
           <div id="time">{formatTime(time)}</div>
           <div >
             <button onClick={toggleTimer} className="ctrl-btn" style={{ marginRight: '1rem' }}>
@@ -90,7 +92,11 @@ const Pomodoro = () => {
           close
         </button> */}
           </div>
-          <h4>Durations</h4>
+          <div style={{ padding: '0px 0 0 0' }}>
+            <button onClick={handleSetDurations} className="settings-element">
+              Set Durations
+            </button>
+          </div>
           <div id="duration-inputs">
             <div className="input-group">
               <label htmlFor="work-input">Work</label>
@@ -123,18 +129,16 @@ const Pomodoro = () => {
               />
             </div>
           </div>
-          <div style={{ padding: '20px 0 0 0' }}>
-            <button onClick={handleSetDurations} className="settings-element">
-              Set Durations
-            </button>
-          </div>
+          
         </div>
         <button
           onClick={() => setShowSettings(!showSettings)}
           id="settings-btn"
           className="ctrl-btn material-symbols-outlined"
+          style={{width:'2rem'}}
         >
-          {showSettings ? 'close' : 'Settings'}
+                    {showSettings ? <X size={24} /> : <Settings size={24} />}
+
         </button>
       </div>
     </div>
