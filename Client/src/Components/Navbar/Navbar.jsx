@@ -9,7 +9,7 @@ const RANGE = 'Sheet1!A:C';
 
 
 const Navbar = () => {
-
+    const [name, setName] = useState(window.localStorage.getItem('name') || 'User');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
     const [greeting, setGreeting] = useState('');
@@ -90,6 +90,24 @@ const Navbar = () => {
       setGreeting(greetingMessage);
     }, []);
   
+  useEffect(() => {
+    const func = () => {
+      if (window.localStorage.getItem('name')) {
+        setName(window.localStorage.getItem('name'));
+      } else {
+        const user = prompt('Please enter your name');
+        if (user === "" || user === null) {
+          alert('Please enter a valid name');
+          func();
+        }
+        window.localStorage.setItem('name', user);
+        setName(window.localStorage.getItem('name'));
+      }
+    }
+
+    func();
+  }, [])
+  
   
   return (
     <div className='navbar bg-[#f4f5f7] mx-10 w-100 h-[10vh] pt-10 pb-10 poppins-medium px-5 flex justify-between items-center gap-10'>
@@ -98,11 +116,11 @@ const Navbar = () => {
                 {greeting}
             </span>
             <span className="text-[#b0afaf]">
-                Aryan
+                {name}
             </span>
         </div>
 
-        <div className="overflow-hidden bg-[#5d7dfc] text-white flex flex-wrap gap-4 flex-grow px-5 py-2 text-2xl rounded-3xl mask-cont">
+        <div className="overflow-hidden text-white flex flex-wrap gap-4 flex-grow px-3 py-2 text-xl rounded-3xl mask-cont">
           {headings.map((heading, index) => (
             <Marquee key={index} text={heading} />
           ))}

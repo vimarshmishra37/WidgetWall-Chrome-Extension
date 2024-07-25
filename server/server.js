@@ -50,7 +50,7 @@ app.get("/steps", async (req, res) => {
     const { tokens } = await oAuth2Client.getToken(code);
     oAuth2Client.setCredentials(tokens);
     req.session.tokens = tokens;
-
+    // res.send(tokens);
     res.redirect("/fitness-data");
   } catch (error) {
     console.error("Error retrieving access token:", error);
@@ -64,6 +64,7 @@ app.get("/fitness-data", async (req, res) => {
       version: "v1",
       auth: oAuth2Client,
     });
+
 
     const sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;
 
