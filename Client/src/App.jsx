@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 // import { useState } from 'react'
-// import MusicPlayer from './Components/musicPlayer/MusicPlayer';
+
 import ReactDOM from 'react-dom';
 import React from 'react';
+import Player from './Components/musicPlayer/Player';
 
 import { useEffect, useState } from 'react';
 import './App.css'
@@ -77,8 +78,9 @@ function App() {
               </div>
 
           </div>
-          <div className='min-w-[32%] h-[80%] rounded-xl border border-[#5d7dfc] bg-white'>Other Widget
+          <div className='min-w-[50%] h-[80%] rounded-xl border border-[#5d7dfc] bg-white'>Other Widget
           {/* <MusicPlayer /> */}
+          <Player />
           </div>
         </div>
       </div>
