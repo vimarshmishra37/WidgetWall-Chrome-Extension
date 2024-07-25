@@ -17,6 +17,8 @@ import Calender from './Components/Calender/Calender';
 import Quote from './Components/Quote/Quote';
 import DailyStepCount from './Components/Steps/DailyStepCount';
 import Sheets from './Components/Sheets/Sheets';
+import Forms from './Components/Forms/Forms';
+import Blogs from './Components/Blogs/Blogs';
 
 
 // eslint-disable-next-line react/prop-types
@@ -94,9 +96,9 @@ function App() {
               <Sheets />
             </div>
             <div className='w-[31%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
-              <DailyStepCount />
+              <Forms />
             </div>
-            <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'><Calender /></div>
+            <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'><Blogs /></div>
           </div>
         </div>
       </div>
