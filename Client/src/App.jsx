@@ -16,7 +16,6 @@ import Pomodoro from './Components/pomodoro/Pomodoro'
 import Calender from './Components/Calender/Calender';
 import Quote from './Components/Quote/Quote';
 import DailyStepCount from './Components/Steps/DailyStepCount';
-import Sheets from './Components/Sheets/Sheets';
 
 
 // eslint-disable-next-line react/prop-types
@@ -84,16 +83,7 @@ function App() {
             <div className='w-[30%] p-5 rounded-xl border bg-white flex justify-center items-center shadow-lg'>
               <Player />
             </div>
-            <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
-              <DailyStepCount />
-            </div>
-            <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'><Calender /></div>
-          </div>
-          <div className='w-[97.7%] flex justify-between'>
-            <div className='w-[30%] p-5 rounded-xl border bg-white flex justify-center items-center shadow-lg'>
-              <Sheets />
-            </div>
-            <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+            <div className='w-[31%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
               <DailyStepCount />
             </div>
             <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'><Calender /></div>
