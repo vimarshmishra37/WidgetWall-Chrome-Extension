@@ -1,12 +1,51 @@
 import {useEffect, useState} from 'react'
 import Marquee from './Marquee/Marquee'
+import './Navbar.css'
+import axios from 'axios';
+
+const SHEET_ID = '1EwC3R41zB8g0jL1tiuLNEKfFmmAJN_ytK5OqLbs3n4Y';
+const API_KEY = 'AIzaSyC2m5z17BBdHm9ezt4WU-0IAZr2icjUnRA';
+const RANGE = 'Sheet1!A:C';
+
 
 const Navbar = () => {
 
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
     const [greeting, setGreeting] = useState('');
+    const [headings, setHeadings] = useState([]);
 
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`);
+          const rows = response.data.values;
+  
+          // Assuming the first row contains column names
+          const [columns, ...dataRows] = rows;
+  
+          // Find the index of the relevant columns
+          const headingIndex = columns.indexOf('Announcement');
+          const statusIndex = columns.indexOf('Status');
+          console.log(statusIndex)
+          if (headingIndex === -1 || statusIndex === -1) {
+            throw new Error('Required columns are missing');
+          }
+  
+          // Filter rows based on status and extract headings
+          const filteredHeadings = dataRows
+            .filter(row => row[statusIndex] === 'Active')
+            .map(row => row[headingIndex]);
+  
+          setHeadings(filteredHeadings);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
+  
     useEffect(() => {
         const updateTime = () => {
             const currentTime = new Date();
@@ -53,16 +92,20 @@ const Navbar = () => {
   
   
   return (
-    <div className='w-100 h-[10vh] border border-red-400 poppins-medium px-5 flex justify-between items-center gap-10'>
+    <div className='navbar bg-[#f4f5f7] mx-10 w-100 h-[10vh] pt-10 pb-10 poppins-medium px-5 flex justify-between items-center gap-10'>
         <div className="text-3xl">
             <span>
                 {greeting}
             </span>
-            <span className="text-[#b0afaf]">Aryan</span>
+            <span className="text-[#b0afaf]">
+                Aryan
+            </span>
         </div>
 
-        <div className="overflow-hidden border border-red-400 flex-grow px-5 text-3xl rounded-2xl">
-            <Marquee text="📍 Sample Announcement 1 📍" />
+        <div className="overflow-hidden bg-[#5d7dfc] text-white flex flex-wrap gap-4 flex-grow px-5 py-2 text-2xl rounded-3xl mask-cont">
+          {headings.map((heading, index) => (
+            <Marquee key={index} text={heading} />
+          ))}
         </div>
         
         <div className="flex flex-col text-right justify-end">
