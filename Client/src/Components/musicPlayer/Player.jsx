@@ -40,15 +40,14 @@ const Player = () => {
   };
 
   return (
-    <div className="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-      <div className="p-4">
-        {/* <h2 className="text-2xl font-bold text-gray-800 mb-4">Music</h2>   */}
+    <div className="h-full flex justify-center items-start overflow-auto p-4">
+      <div className="w-full max-w-sm">
         <div className="mb-3">
           <iframe
             ref={embedRef}
             src={`https://open.spotify.com/embed/playlist/${categories[activeCategory].playlistId}?utm_source=generator&theme=0`}
             width="100%"
-            height="180"
+            height="100"
             frameBorder="0"
             allowFullScreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -61,28 +60,32 @@ const Player = () => {
             <button
               key={index}
               onClick={() => playCategory(index)}
-              className={`w-full text-left py-3 px-4 rounded-lg flex items-center justify-between transition-colors ${
+              className={`w-full text-left py-2 px-3 rounded-lg flex items-center justify-between transition-colors ${
                 activeCategory === index ? 'bg-gray-200' : 'bg-gray-100 hover:bg-gray-200'
               }`}
             >
-              <span className="text-gray-700 font-medium">{category.name}</span>
+              <span className="text-gray-700 text-sm font-medium">{category.name}</span>
               {activeCategory === index ? (
                 isPlaying ? (
-                  <Pause className="h-5 w-5 text-gray-600" onClick={(e) => {
-                    e.stopPropagation();
-                    togglePlayPause();
-                  }} />
+                  <Pause
+                    className="h-4 w-4 text-gray-600"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      togglePlayPause();
+                    }}
+                  />
                 ) : (
-                  <Play className="h-5 w-5 text-gray-600" />
+                  <Play className="h-4 w-4 text-gray-600" />
                 )
               ) : (
-                <Play className="h-5 w-5 text-gray-600" />
+                <Play className="h-4 w-4 text-gray-600" />
               )}
             </button>
           ))}
         </div>
       </div>
     </div>
+
   );
 };
 

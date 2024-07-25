@@ -78,10 +78,12 @@ function App() {
               </div>
 
           </div>
-          <div className='min-w-[50%] h-[80%] rounded-xl border border-[#5d7dfc] bg-white'>Other Widget
-          {/* <MusicPlayer /> */}
-          <Player />
-          </div>
+          <div className='min-w-[50%] h-[80%] rounded-xl border border-[#5d7fc] bg-white flex flex-col'>
+  <h2 className="p-4 font-semibold">Other Widget</h2>
+  <div className="flex-grow overflow-hidden">
+    <Player />
+  </div>
+</div>
         </div>
       </div>
     </div>
